@@ -7,7 +7,7 @@ void swap(int *a, int *b) {         // function that swaps values of a and b
     *b = temp;
 }
 
-int partition(int a[], int left, int right) {     
+int partition(int *a, int left, int right) {     
     // helper function that places all elements smaller than the pivot
     // on the left of the pivot and all elements larger on the right of the pivot.
     // returns the index of the last element on the smaller side
@@ -24,21 +24,23 @@ int partition(int a[], int left, int right) {
             j--;
         } while (a[j] > pivot);
 
-        if (i >= j);                        // if the two pointers meet
+        if (i >= j)                        // if the two pointers meet
             return j;
         
-        swap(i, j);                         // swap i and j
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+        //swap(&a[i], &a[j]);                         // swap i and j
     }
 }
 
-void quick_sort(int *a, int n) {
-    int left = 0;                           // left most index
-    int right = n - 1;                      // right most index
-    
-    int pi = partition(*a, left, right);    // pi = partioning index
+void quick_sort(int *a, int left, int right) {
+    if (left < right) {
+        int pi = partition(a, left, right);    // pi = partioning index
 
-    quick_sort(*a, left, pi);               // Separately sort elements before
-    quick_sort(*a, pi + 1, right);          // partition and after partition
+        quick_sort(a, left, pi);               // array from index 0 - pi
+        quick_sort(a, pi + 1, right);          // array from pi to last index
+    }
 }
 
 void merge_sort(int *a, int n) {
@@ -56,6 +58,6 @@ void printArray(int arr[], int size) {  // for testing and printing array test c
 int main() {
     int arr[] = {10, 7, 8, 9, 1, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
-    merge_sort(arr, 0, n-1);
+    quick_sort(arr, 0, n-1);
     printArray(arr, n);
 }
