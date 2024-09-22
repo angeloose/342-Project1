@@ -8,6 +8,7 @@ Haskell, on the other hand, is a functional language. Instead of manually managi
 The main similarity between C and Haskell is that both can implement sorting algorithms and follow the same logic: divide the list, sort it, and merge it back. However, the way they do this is very different—C gives you control over every detail, while Haskell does more work for you in the background, using higher-level concepts like recursion and immutability.
 
 The following tools and websites were used to complete this assignment:
-Tools and Websites used for Sorting in C: 
-Tools: Visual Studio Code (to write and run the code), GHC (to run Haskell programs), GCC (to run C programs).
-Websites: GeeksForGeeks.org (for reference), Discord (for asking questions), GitHub (for saving and sharing code), Haskell.org (for learning Haskell), and ChatGPT (for getting help and advice).
+
+Tools and Websites used for Sorting in C: Visual Studio Code, Discord, GitHub, C, Haskell, GeeksForGeeks.org, ChatGPT
+
+Tools and Websites used for Sorting in Haskell: Visual Studio Code, Discord, GitHub, C, Haskell, GeeksForGeeks.org, ChatGPT
